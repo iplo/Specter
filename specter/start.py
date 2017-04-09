@@ -1,7 +1,7 @@
 import sys
 import os
 if sys.argv[1] == "server":
-	PORT = input("What port is your server on?")
+	PORT = input("What port is your server on? ")
 
 	import webbrowser
 
