@@ -1,0 +1,4 @@
+This project contains .gitignore file(s) and is hosted using github
+The backend is powered by python and frontend by javascript
+
+The python contains Github, default and custom module/api's
