@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Opening App...</title>
+</head>
+<body>
+<script type="text/javascript">
+
+var parts = window.location.search.substr(1).split("&");
+var $_GET = {};
+for (var i = 0; i < parts.length; i++) {
+    var temp = parts[i].split("=");
+    $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
+}
+
+window.onload = function(){
+
+	console.log($_GET);
+
+	if($_GET['new'] == "window"){
+		var size = "height="+$_GET['height']+",width="+$_GET['width'];
+		var openurl = $_GET['url']+"?appname="+$_GET['appname'];
+		window.open(openurl, $_GET['appname'], 'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=720,height=800'+size);
+		close();
+	}
+
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+@media only screen and (max-width: 1024px){ // only from ipads down
+  body{
+    padding-bottom: 60px; // push your whole site same height upwards. ;)
+  }
+}
