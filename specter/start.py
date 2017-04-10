@@ -1,36 +1,44 @@
-import sys
 import os
-import envirementcontroller as controller
-if sys.argv[1] == "server":
-	PORT = input("What port is your server on? ")
+env = open(os.getcwd()+"/.env")
+env = env.read()
+if env == "default":
+	import sys
+	import os
+	import envirementcontroller as controller
+	if sys.argv[1] == "server":
+		PORT = input("What port is your server on? ")
 
-	import webbrowser
+		import webbrowser
 
-	appname = controller.appname()
+		appname = controller.appname()
 
-	filename = "index.php"
+		filename = "index.php"
 
-	url = "localhost:"+PORT+"/"+appname+'/'+filename
+		url = "localhost:"+PORT+"/"+appname+'/'+filename
 
-	webbrowser.open('file:///Developer/specter/open.script.html?url='+url+'&new=window&width=800&height=600&appname='+appname,new=2)
-pass
-if sys.argv[1] == "app":
-	filedir = os.getcwd()+'/package.json';
+		webbrowser.open('file:///Developer/specter/open.script.html?url='+url+'&new=window&width=800&height=600&appname='+appname,new=2)
+	pass
+	if sys.argv[1] == "app":
+		filedir = os.getcwd()+'/package.json';
 
-	details = open(filedir, "r");
+		details = open(filedir, "r");
 
-	obj = details.read()
+		obj = details.read()
 
-	print("Starting app...")
+		print("Starting app...")
 
-	import webbrowser
+		import webbrowser
 
-	appname = controller.appname()
+		appname = controller.appname()
 
-	filename = open(os.getcwd()+'/.envname', "r")
-	filename = filename.read()
+		filename = open(os.getcwd()+'/.envname', "r")
+		filename = filename.read()
 
-	url = os.getcwd()+'/'+filename
+		url = os.getcwd()+'/'+filename
 
-	webbrowser.open('file:///Developer/specter/open.script.html?url='+url+'&new=window&width=800&height=600&appname='+appname,new=2)
-pass
+		webbrowser.open('file:///Developer/specter/open.script.html?url='+url+'&new=window&width=800&height=600&appname='+appname,new=2)
+	pass
+else:
+	import subprocess
+	subprocess.Popen(env+' '+argv)
+	pass
