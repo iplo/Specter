@@ -1,11 +1,12 @@
 import sys
 import os
+import envirementcontroller as controller
 if sys.argv[1] == "server":
 	PORT = input("What port is your server on? ")
 
 	import webbrowser
 
-	appname = "PhpApp"
+	appname = controller.appname()
 
 	filename = "index.php"
 
@@ -24,9 +25,10 @@ if sys.argv[1] == "app":
 
 	import webbrowser
 
-	appname = "My Specter App"
+	appname = controller.appname()
 
-	filename = "index.php"
+	filename = open(os.getcwd()+'/.envname', "r")
+	filename = filename.read()
 
 	url = os.getcwd()+'/'+filename
 

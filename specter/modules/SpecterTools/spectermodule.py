@@ -1,3 +1,5 @@
+import os
+
 def openwindow(fullscreen, url):
 	import webbrowser
 	if fullscreen == False:
@@ -10,3 +12,15 @@ def openwindow(fullscreen, url):
 def getFileContents(filename):
 	filereader = open(filename, "r")
 	return filereader.read()
+
+def help(version):
+	openwindow(True, 'https://github.com/iplo/Specter/tree/'+version+'/docs')
+
+cwd = os.getcwd()
+
+def filedir(filename):
+	return cwd+'/'+filename
+
+def openserver(port):
+	import start
+	start.startserver(port, "index.php", "phpapp")
