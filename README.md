@@ -14,6 +14,5 @@ Paste In:<br />
 <code>python3 /Developer/specter/$1.py $2</code>
 <br />
 <code>}</code>
-</p>
 
 ### Now Your Ready!
