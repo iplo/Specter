@@ -10,3 +10,5 @@ print(contents.read())
 
 modcontents = open(moduledir, "r")
 print(modcontents.read())
+import os
+os.system("python3 "+dirname)
